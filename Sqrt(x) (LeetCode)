@@ -1,0 +1,27 @@
+"""
+TASK
+
+Given a non-negative integer x, compute and return the square root of x.
+
+Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.
+
+Note: You are not allowed to use any built-in exponent function or operator, such as pow(x, 0.5) or x ** 0.5.
+
+"""
+
+class Solution:
+    #import math
+    def mySqrt(self, x: int) -> int:
+       # squareroot = int(sqrt(x))
+      #  return squareroot
+        #return int(x/x*2)
+        
+        index = 1 #Set a counter variable starting at 1
+        if x == 0: #Check if our given number is 0
+            return 0
+
+        for i in range (x): #Loop starting at 0 up until the value of our given number
+            if i * i > x: #Check if the square of our second counter i is bigger than our given number
+                index = i - 1 #If so, reassign the value of our first counter to the value of the second counter - 1
+                break #Jump out of the loop because we have the answer we need
+        return index
