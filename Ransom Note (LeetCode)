@@ -1,0 +1,10 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if len(ransomNote) > len(magazine):
+            return False
+        magazine = list(magazine) #Turn the string into individual elements of a list
+        for i in ransomNote:
+            if(i not in magazine): #If the current letter in the ransom note does not exist in the magazine list then we have our solution
+                return False
+            magazine.remove(i) #Remove the current letter from the note so that it isn't counted more than once
+        return True
