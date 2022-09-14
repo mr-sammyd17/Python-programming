@@ -1,0 +1,16 @@
+"""
+TASK
+
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+Return the running sum of nums.
+
+"""
+
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        add = 0 #Add 0 to the first number in the array
+        for i in range (len(nums)): #Loop throough the array
+            nums[i] = nums[i]+add #Change the value of the current number in the array
+            add = nums[i] #Change add to hold the current value so that the next addtion is to the current value of the array pointer
+        return(nums)
