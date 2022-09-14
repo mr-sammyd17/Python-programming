@@ -1,0 +1,9 @@
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        end = [] #Create an empty list to start adding values to
+        start = head #Set the beginning of the list
+        
+        while start is not None: #Make sure the list is not empty
+            end.append(start.val) #Add the values to the new empty list
+            start = start.next #Move through the values in the list
+        return end == end [::-1] #Check if my new list matches the values in the existing list going backwards
